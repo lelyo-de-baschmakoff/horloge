@@ -6,7 +6,7 @@ def toggle_pause(est_en_pause):
 
 def choisir_mode():
     while True:
-        print("Choisissez le mode d'affichage :")
+        print("\nChoisissez le mode d'affichage :")
         print("1. Am/Pm")
         print("2. 24 heures")
         choix = input("Entrez 1 ou 2 pour sélectionner le mode : ")
@@ -18,7 +18,7 @@ def choisir_mode():
             print("Choix invalide. Veuillez sélectionner 1 ou 2.")
 
 def regler_alarme(heure):
-    print(f"Alarme réglée pour {heure[0]:02d}:{heure[1]:02d}:{heure[2]:02d}")
+    print(f"\nAlarme réglée pour {heure[0]:02d}:{heure[1]:02d}:{heure[2]:02d}")
 
 def verifier_alarme(heure_actuelle, heure_alarme):
     if heure_actuelle == heure_alarme:
@@ -52,18 +52,16 @@ def stop_horloge():
             if est_en_pause == True: 
                 print("P pour relancer l'horloge")
             else:
-                print("L'horloge reprend")
+                print("\nL'horloge reprend")
 
 heure_initiale = (8, 30, 0)
 heure_alarme = (8, 30, 10)
 est_en_pause = False
 mode = choisir_mode()
 
-afficher_heure(heure_initiale, mode)
-
 regler_alarme(heure_alarme)
 
-print("Appuyer sur P pour stoper l'horloge")
+print("\nAppuyer sur P pour stoper l'horloge")
 
 while True:
     if msvcrt.kbhit():
